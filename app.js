@@ -66,17 +66,19 @@ for (var k in productData) {
   }
 }
 var m = document.getElementsByClassName("previewImage");
-for (var l = 0; l < m.length; l++) {
-  if (l == 0) {
-    m[l].classList.add("active");
+for (var i = 0; i < m.length; i++) {
+  if (i == 0) {
+    m[i].classList.add("active");
   }
-  m[l].addEventListener("click", function (e) {
-    leftImage.src = e.target.src;
+  m[i].onclick = function () {
+    var g = this.src;
+    leftImage.src = g;
     var x = document.getElementsByClassName("active");
-    if (x.length > 0) {
-      x[0].classList.remove("active");
+    console.log(x.length);
+    if (x.length != 0) {
+      x[0].className = "";
     }
-    e.target.classList.add("active");
-  });
+    this.className = "active";
+  };
 }
 // Author: Ganesh M Naik 9663211070
